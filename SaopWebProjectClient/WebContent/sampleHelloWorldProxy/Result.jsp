@@ -5,15 +5,16 @@
 <TITLE>Result</TITLE>
 </HEAD>
 <BODY>
-<H1>Result</H1>
+	<H1>Result</H1>
 
-<jsp:useBean id="sampleHelloWorldProxyid" scope="session" class="com.example.HelloWorldProxy" />
-<%
+	<jsp:useBean id="sampleHelloWorldProxyid" scope="session"
+		class="com.example.HelloWorldProxy" />
+	<%
 if (request.getParameter("endpoint") != null && request.getParameter("endpoint").length() > 0)
 sampleHelloWorldProxyid.setEndpoint(request.getParameter("endpoint"));
 %>
 
-<%
+	<%
 String method = request.getParameter("method");
 int methodID = 0;
 if (method == null) methodID = -1;
@@ -28,13 +29,13 @@ case 2:
         java.lang.String getEndpoint2mtemp = sampleHelloWorldProxyid.getEndpoint();
 if(getEndpoint2mtemp == null){
 %>
-<%=getEndpoint2mtemp %>
-<%
+	<%=getEndpoint2mtemp %>
+	<%
 }else{
         String tempResultreturnp3 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(getEndpoint2mtemp));
         %>
-        <%= tempResultreturnp3 %>
-        <%
+	<%= tempResultreturnp3 %>
+	<%
 }
 break;
 case 5:
@@ -51,14 +52,14 @@ case 10:
         com.example.HelloWorld getHelloWorld10mtemp = sampleHelloWorldProxyid.getHelloWorld();
 if(getHelloWorld10mtemp == null){
 %>
-<%=getHelloWorld10mtemp %>
-<%
+	<%=getHelloWorld10mtemp %>
+	<%
 }else{
         if(getHelloWorld10mtemp!= null){
         String tempreturnp11 = getHelloWorld10mtemp.toString();
         %>
-        <%=tempreturnp11%>
-        <%
+	<%=tempreturnp11%>
+	<%
         }}
 break;
 case 13:
@@ -71,27 +72,29 @@ case 13:
         java.lang.String sayHelloWorld13mtemp = sampleHelloWorldProxyid.sayHelloWorld(name_1idTemp);
 if(sayHelloWorld13mtemp == null){
 %>
-<%=sayHelloWorld13mtemp %>
-<%
+	<%=sayHelloWorld13mtemp %>
+	<%
 }else{
         String tempResultreturnp14 = org.eclipse.jst.ws.util.JspUtils.markup(String.valueOf(sayHelloWorld13mtemp));
         %>
-        <%= tempResultreturnp14 %>
-        <%
+	<%= tempResultreturnp14 %>
+	<%
 }
 break;
 }
 } catch (Exception e) { 
 %>
-Exception: <%= org.eclipse.jst.ws.util.JspUtils.markup(e.toString()) %>
-Message: <%= org.eclipse.jst.ws.util.JspUtils.markup(e.getMessage()) %>
-<%
+	Exception:
+	<%= org.eclipse.jst.ws.util.JspUtils.markup(e.toString()) %>
+	Message:
+	<%= org.eclipse.jst.ws.util.JspUtils.markup(e.getMessage()) %>
+	<%
 return;
 }
 if(!gotMethod){
 %>
-result: N/A
-<%
+	result: N/A
+	<%
 }
 %>
 </BODY>
