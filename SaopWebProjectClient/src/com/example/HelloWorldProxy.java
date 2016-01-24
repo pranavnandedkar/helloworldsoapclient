@@ -3,7 +3,7 @@ package com.example;
 public class HelloWorldProxy implements com.example.HelloWorld {
   private String _endpoint = null;
   private com.example.HelloWorld helloWorld = null;
-   
+  
   public HelloWorldProxy() {
     _initHelloWorldProxy();
   }
@@ -44,10 +44,28 @@ public class HelloWorldProxy implements com.example.HelloWorld {
     return helloWorld;
   }
   
-  public java.lang.String sayHelloWorld(java.lang.String name) throws java.rmi.RemoteException{
+  public int getAge() throws java.rmi.RemoteException{
     if (helloWorld == null)
       _initHelloWorldProxy();
-    return helloWorld.sayHelloWorld(name);
+    return helloWorld.getAge();
+  }
+  
+  public byte[] getBbb() throws java.rmi.RemoteException{
+    if (helloWorld == null)
+      _initHelloWorldProxy();
+    return helloWorld.getBbb();
+  }
+  
+  public void setBbb(byte[] bbb) throws java.rmi.RemoteException{
+    if (helloWorld == null)
+      _initHelloWorldProxy();
+    helloWorld.setBbb(bbb);
+  }
+  
+  public void setAge(int age) throws java.rmi.RemoteException{
+    if (helloWorld == null)
+      _initHelloWorldProxy();
+    helloWorld.setAge(age);
   }
   
   

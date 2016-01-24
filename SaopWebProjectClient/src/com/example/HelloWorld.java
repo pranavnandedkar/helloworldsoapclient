@@ -8,5 +8,8 @@
 package com.example;
 
 public interface HelloWorld extends java.rmi.Remote {
-    public java.lang.String sayHelloWorld(java.lang.String name) throws java.rmi.RemoteException;
+    public int getAge() throws java.rmi.RemoteException;
+    public byte[] getBbb() throws java.rmi.RemoteException;
+    public void setBbb(byte[] bbb) throws java.rmi.RemoteException;
+    public void setAge(int age) throws java.rmi.RemoteException;
 }
