@@ -3,7 +3,7 @@ package com.example;
 public class HelloWorldProxy implements com.example.HelloWorld {
   private String _endpoint = null;
   private com.example.HelloWorld helloWorld = null;
-  
+   
   public HelloWorldProxy() {
     _initHelloWorldProxy();
   }
